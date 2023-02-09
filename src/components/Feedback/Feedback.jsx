@@ -32,7 +32,7 @@ export class Feedback extends Component {
    
     return (
       <>
-       
+        {/* <Section title='Please leave feedback'> */}
         <Title>Please leave feedback</Title>
         <FeedbackOptions
           options={this.state}
@@ -46,7 +46,7 @@ export class Feedback extends Component {
             countPositiveFeedback={this.countPositiveFeedbackPercentage()}
           />
         )}
-      
+      {/* </Section> */}
       </>
     );
   }

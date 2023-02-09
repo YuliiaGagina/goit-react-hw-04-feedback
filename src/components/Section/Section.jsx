@@ -1,16 +1,16 @@
-// import { Title } from "components/Feedback/Feedback.styled";
+import { Title } from "components/Feedback/Feedback.styled";
 
 
 
 
-// const Section = ({Children}) =>{
+const Section = ({title, сhildren}) =>{
   
-//     return (<>
-//     <Title title='Please leave feedback' />
-//     {Children}
-//     </>
-//     )
+    return (<>
+    <Title>{title}</Title>
+    {сhildren}
+    </>
+    );
     
-// }
+}
 
-// export default Section
+export default Section
