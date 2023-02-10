@@ -1,10 +1,10 @@
 import { Component } from 'react';
 import FeedbackOptions from 'components/FeedbackOptions/FeedbackOptions';
 // import StatisticListItem from 'components/StatisticListItem/StatisticListItem';
-import {  Subtitle, Title } from './Feedback.styled';
+import { Subtitle } from './Feedback.styled';
 import Statistics from 'components/Statistics/Statistics';
 import Notification from 'components/Notification/Notification';
-// import Section from 'components/Section/Section';
+import Section from 'components/Section/Section';
 
 export class Feedback extends Component {
   state = {
@@ -29,25 +29,36 @@ export class Feedback extends Component {
     }
   };
   render() {
-   
     return (
-      <>
-        {/* <Section title='Please leave feedback'> */}
-        <Title>Please leave feedback</Title>
-        <FeedbackOptions
-          options={this.state}
-          onLeaveFeedback={this.handelIncrement}
-        />
-        {this.countTotalFeedback() > 0 ? <Subtitle>Statistics</Subtitle> : <Notification />}
-        {this.countTotalFeedback() > 0 && (
-          <Statistics
+      <div>
+        <Section title="Please leave feedback">
+        
+          <FeedbackOptions
             options={this.state}
-            countTotal={this.countTotalFeedback()}
-            countPositiveFeedback={this.countPositiveFeedbackPercentage()}
+            onLeaveFeedback={this.handelIncrement}
           />
+        </Section>
+        {this.countTotalFeedback() > 0 ? (
+          <>
+            <Subtitle>Statistics</Subtitle>
+            <Statistics
+              options={this.state}
+              countTotal={this.countTotalFeedback()}
+              countPositiveFeedback={this.countPositiveFeedbackPercentage()}
+            />
+          </>
+        ) : (
+          <Notification />
         )}
-      {/* </Section> */}
-      </>
+      
+      </div>
     );
   }
+
+ 
+
+}
+
+Feedback.propTypes = {
+    
 }
